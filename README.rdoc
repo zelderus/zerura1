@@ -1,8 +1,7 @@
-== README
+== ZeRuRa
 
 zldr rora
 
-Things you may want to cover:
 
 * zerora <tt>first</tt>
 
