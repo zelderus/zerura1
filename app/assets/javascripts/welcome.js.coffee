@@ -3,11 +3,18 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 
-$ -> (
+
+#
+# Запуск при загрузке страницы
+# учитываем Terbolinks. По старинке было бы "$(document).ready"
+#
+$(document).on "page:change", -> (
 
 	$(".jsgo_btn").on("click", () ->  GoGo("wooo"); );
 	#console.log("coffee sucks");
 )
+
+
 
 
 
