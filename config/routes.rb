@@ -1,21 +1,23 @@
 Blog2::Application.routes.draw do
-  
-  resources :users
+    
 
-  get "welcome/index"
+  get     "welcome/index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'welcome#index'
+  root    'welcome#index'
 
+
+  resources :users
 
 
 	resources :articles
+	patch  "articles/:id/update" => "articles#update"
+	post   "articles/create" => "articles#create"
 	
-	post "articles/create" => "articles#create"
 	
-	get "do/:txt" => "welcome#txt", as: :txtob
+	get    "do/:txt" => "welcome#txt", as: :txtob
 
 
   # Example of regular route:

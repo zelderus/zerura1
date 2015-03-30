@@ -3,30 +3,4 @@
 <%= link_to 'Articles', controller: 'articles', action: 'index' %>
 
 
-<% if @article.errors.any? %>
-	<div class='errors'>
-		<h2>ошибок: <%= @article.errors.count %></h2>
-		<ul>
-			<% @article.errors.full_messages.each do |msg| %>
-				<li><%= msg %></li>
-			<% end %>
-		</ul>
-	</div>
-<% end %>
-
-
-<%= form_for :article, url: 'create' do |f| %>
-  <p>
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </p>
- 
-  <p>
-    <%= f.label :text %><br>
-    <%= f.text_area :text %>
-  </p>
- 
-  <p>
-    <%= f.submit %>
-  </p>
-<% end %>
+<%= render 'form', super_url: 'create' %>
