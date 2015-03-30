@@ -14,3 +14,43 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+this.zerura = this.zerura || {};
+
+
+
+$(function () {
+
+    //console.log("started");
+		//$(".jsgo_btn").on("click", function() { zerura.GoGo("wooo"); } );
+		
+
+});
+
+
+
+zerura.GoGo = function(txt) {
+	var dataSend = { msg: txt };
+	
+	$.ajax({
+		url: "/test",
+		data: dataSend,
+		success: function(jo){ 
+			zerura.Sucu(jo.tob);
+		},
+	  	error: function(x,m,e){ 
+	  		console.log("error " + m);
+	  	}
+	});
+	
+	return false;
+};
+
+
+
+
+zerura.Sucu = function(tob) {
+ 	console.log(tob.name);
+};
+
+

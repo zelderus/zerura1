@@ -18,8 +18,9 @@ Blog2::Application.routes.draw do
 	
 	
 	get    "do/:txt" => "welcome#txt", as: :txtob
-
-
+  get    "test" => "welcome#test"
+  
+  
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
