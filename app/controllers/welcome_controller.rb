@@ -17,7 +17,7 @@ class WelcomeController < ApplicationController
     
     txt = Texttxt.new
     txt.name = msg
-    txt.text = "simple text"
+    txt.text = 'simple text'
    
     respond_to do |format|
       format.json { render json: { msg: txt.get_full, tob: txt } }

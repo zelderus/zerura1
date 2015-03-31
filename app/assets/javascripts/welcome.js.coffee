@@ -10,7 +10,7 @@
 #
 $(document).on "page:change", -> (
 
-	$(".jsgo_btn").on("click", () ->  GoGo("wooo"); );
+	$(".jsgo_btn").on("click", () ->  GoGo("wooo"));
 	#console.log("coffee sucks");
 )
 
@@ -19,13 +19,13 @@ $(document).on "page:change", -> (
 
 
 GoGo = (txt) -> (
-	dataSend = { msg: txt };
+	dataSend = { msg: txt }
 	
 	$.ajax
 		url: "/test",
 		data: dataSend
 		error: (x,m,e) ->
-  			console.log("error #{m}");
+  	  console.log("error #{m}");
 		success: (jo) ->
 			Sucu(jo.tob);
   		
@@ -38,7 +38,7 @@ JopaLot = (txt) -> (
 	console.log("jopa #{txt}")
 	console.log("Im");
 	console.log("big body");
-	console.log("fn.."); 
+	console.log("fn..");
 )
   	
 Sucu = (tob) -> (
