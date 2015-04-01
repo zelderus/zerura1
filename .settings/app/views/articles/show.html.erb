@@ -1,0 +1,13 @@
+
+<%= link_to 'Home', root_path %>
+<%= link_to 'Articles', controller: 'articles', action: 'index' %>
+
+<p>
+  <strong>Title:</strong>
+  <%= @article.title %>
+</p>
+ 
+<p>
+  <strong>Text:</strong>
+  <%= @article.text %>
+</p>

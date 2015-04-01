@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= full_title(yield(:title))%></title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+	<div class="header">
+		<div class="straight">
+			<div class="header_title">zldr rails</div>
+		</div>
+	</div>
+	
+	
+	
+	<div class="content">
+		<div class="straight">
+			<%= yield %>
+		</div>
+	</div>
+	
+	
+	
+	<div class="footer">
+		<div class="straight">
+			zelder 2015
+		</div>
+	</div>
+
+</body>
+</html>
