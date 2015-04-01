@@ -18,29 +18,27 @@ $(document).on "page:change", -> (
 
 
 
-GoGo = (txt) -> (
+GoGo = (txt) ->
 	dataSend = { msg: txt }
 	
 	$.ajax
 		url: "/test",
 		data: dataSend
 		error: (x,m,e) ->
-  	  console.log("error #{m}");
+  	  		console.log("error #{m}");
 		success: (jo) ->
 			Sucu(jo.tob);
-  		
-	
+
 	false
-)
 
 
-JopaLot = (txt) -> ( 
+
+JopaLot = (txt) ->
 	console.log("jopa #{txt}")
 	console.log("Im");
 	console.log("big body");
 	console.log("fn..");
-)
+
   	
-Sucu = (tob) -> (
+Sucu = (tob) ->
  	console.log(tob.name);
-)
