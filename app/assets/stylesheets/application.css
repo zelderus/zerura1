@@ -13,6 +13,13 @@
  */
 
 body { margin: 0; padding: 0;}
+
+
+table {}
+table td { padding: 4px; }
+
+
+
 .straight {margin: 0 auto;width:960px;}
 
 .header { margin: 0; padding: 10px;  background-color: #3a5795; color: #fefefe; border-bottom: 1px solid #666699;}
@@ -20,10 +27,11 @@ body { margin: 0; padding: 0;}
 
 
 
-.content { padding: 10px; font-size: 14px; min-height: 600px;}
+.content { padding: 10px; font-size: 14px; min-height: 600px; overflow: hidden; }
 
 
 
 .footer {padding: 20px; background-color: #3a5795; font-size: 12px; text-align:left; border-top:1px solid #666; color: #ddd; }
-
+.footer a { color: #bbb !important; background-color: transparent; }
+.footer a:hover { color: #fff !important; background-color: transparent; }
 

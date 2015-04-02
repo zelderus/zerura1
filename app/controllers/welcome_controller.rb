@@ -1,5 +1,6 @@
 class WelcomeController < ApplicationController
   
+  
   def index
     #@txtob = { txt: 'uuuiii' } #new TextTxt
     
@@ -7,7 +8,18 @@ class WelcomeController < ApplicationController
   
   
   def txt
-    @t = params[:txt]
+    
+    # first
+    @tob = Texttxt.new
+    @tob.name = params[:name]
+    @tob.text = params[:text]
+    
+    # link
+    @tbot = Texttxt.new
+    @tbot.name = 'bot'
+    @tbot.text = 'yeahh'
+    
+    
     
   end
   
