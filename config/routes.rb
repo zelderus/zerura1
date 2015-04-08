@@ -13,7 +13,7 @@ Blog2::Application.routes.draw do
 	
 	
 	# test
-	match  "do/:name(/:text)" => "welcome#txt", as: :bot, defaults: { name: 'bot', text: 'woop' }, via: [:get, :post]
+	match  "do/:name(/:text)", to: "welcome#txt", as: :bot, defaults: { name: 'bote', text: 'woop' }, via: [:get, :post]
   get    "test" => "welcome#test"
   
   # redirect
