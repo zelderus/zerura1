@@ -29,7 +29,7 @@ class Zeho #< ActiveRecord::Base
       #sql = 'SELECT 1 as "Id", 'uiiiiyyyy' as "Text"'
       res  = conn.exec(sql)
       
-      # PG to model (http://www.rubydoc.info/gems/pg/PG/Result#values-instance_method)
+      # PG response (http://www.rubydoc.info/gems/pg/PG/Result#values-instance_method)
       dts = res#.values
     rescue
       # Handle error
@@ -39,6 +39,7 @@ class Zeho #< ActiveRecord::Base
       conn.finish unless conn == nil || conn.finished?
     end
     
+    # to model
     dts = dts.map {|r| { 'Id' => r['Id'], 'Text' => r['Text'] } }
     dts
   end
@@ -54,16 +55,7 @@ class Zeho #< ActiveRecord::Base
     end
   
     def self.set_connection
-      #@conn = ActiveRecord::Base.establish_connection(
-      #        :adapter => "postgresql",
-      #        :host => "127.0.0.1",
-      #        :port => "5432",
-      #        :database => "zerupo",
-      #        :username => "postgres",
-      #        :password => "postgres1"
-      #)
       #@conn = ActiveRecord::Base.establish_connection("some_raw_data")
-      
       #cui = Class::new(ActiveRecord::Base)
       #@conn = cui.establish_connection("some_raw_data").connection
       
