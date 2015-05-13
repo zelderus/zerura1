@@ -19,8 +19,6 @@ class WelcomeController < ApplicationController
     @tbot.name = 'bot'
     @tbot.text = 'yeahh'
     
-    
-    
   end
   
   
@@ -35,6 +33,25 @@ class WelcomeController < ApplicationController
       format.json { render json: { msg: txt.get_full, tob: txt } }
     end
   end
+  
+  
+  
+  def ss
+    # db 1
+    sql = "Select * from testo"
+    #conn = ActiveRecord::Base.establish_connection(Rails.env)
+    @records = ActiveRecord::Base.connection.execute(sql)
+    
+    # db 2
+    #zeho = Zeho.new
+    #@records2 = zeho.get_all
+    @records2 = Zeho.get_all
+    
+
+  end
+  
+  
+  
   
   
 end

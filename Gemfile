@@ -6,6 +6,7 @@ gem 'rails', '4.0.2'
 # Use sqlite3 as the database for Active Record
 group :development do
   gem 'sqlite3'
+	#gem 'pg', '0.18.1'
 end
 
 # Use SCSS for stylesheets
@@ -36,15 +37,18 @@ end
 
 
 group :production do
-  gem 'pg', '0.18.1'
-  gem 'unicorn'
+  #gem 'pg', '0.18.1'
+   gem 'unicorn'
+   #gem 'sqlite3'
 end
+
+gem 'pg', '0.18.1'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
 # Use unicorn as the app server
-# gem 'unicorn'
+gem 'unicorn'
 
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development

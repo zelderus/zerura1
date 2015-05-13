@@ -1,0 +1,30 @@
+<% provide(:title, 'SQL tests')%>
+
+<div style="border-bottom: 1px solid #333;">
+	data from PostgreSQL by raw request
+</div>
+
+
+
+<div style="margin: 5px; border-bottom: 1px dotted #666;">
+	<% @records.each do |rec| %>
+		<div style="padding: 4px; color: #666;">
+			<%= rec['Title'] %>
+		</div>
+	<% end %>
+</div>
+
+
+<div style="margin: 5px; border-bottom: 1px dotted #666;">
+	<% @records2.each do |rec| %>
+		<div style="padding: 4px; color: #666;">
+			<%= rec['Text'] %>
+		</div>
+	<% end %>
+</div>
+
+
+
+
+
+
