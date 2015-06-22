@@ -38,14 +38,16 @@ class WelcomeController < ApplicationController
   
   def ss
     # db 1
-    sql = "Select * from testo"
-    #conn = ActiveRecord::Base.establish_connection(Rails.env)
-    @records = ActiveRecord::Base.connection.execute(sql)
+    #sql = "Select * from testo"
+    ##conn = ActiveRecord::Base.establish_connection(Rails.env)
+    #@records = ActiveRecord::Base.connection.execute(sql)
+	@records = [];
     
     # db 2
     #zeho = Zeho.new
     #@records2 = zeho.get_all
-    @records2 = Zeho.get_all
+	@zeh = Zeho.new
+    @records2 = @zeh.get_all
     
 
   end

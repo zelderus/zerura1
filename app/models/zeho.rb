@@ -1,73 +1,76 @@
 class Zeho #< ActiveRecord::Base
-  #self.abstract_class = true
-  #self.table_name = "Zeho"
   
-  #establish_connection "some_raw_data".to_s
-  
-  
-  def self.get_all
-    # all postgresql queries will be normalized to lower case, so to quote Table and Column names
-    # http://stackoverflow.com/questions/10628917/rails-reports-cant-find-a-column-that-is-there
-    sql = 'SELECT * from "Zeho"'
-    dts = []
-    conn = nil
-    
-    begin
-      connHash = ActiveRecord::Base.configurations['some_raw_data']
-      # Connection
-      conn = PG::Connection.new(
-            connHash['host'], 
-            connHash['port'], 
-            nil, 
-            nil, 
-            connHash['database'], 
-            connHash['username'], 
-            connHash['password'])
+	# установка отладочной информации (будет выведена в разметке)
+	def set_deb txt
+		@deb = txt
+	end
+	def get_deb
+		@deb
+	end
 
-      
-      # Request
-      #sql = 'SELECT 1 as "Id", 'uiiiiyyyy' as "Text"'
-      res  = conn.exec(sql)
-      
-      # PG response (http://www.rubydoc.info/gems/pg/PG/Result#values-instance_method)
-      dts = res#.values
-    rescue
-      # Handle error
-      
-    ensure
-      # Close
-      conn.finish unless conn == nil || conn.finished?
-    end
-    
-    # to model
-    dts = dts.map {|r| { 'Id' => r['Id'], 'Text' => r['Text'] } }
-    dts
-  end
+
+	def get_all
+		sql = 'SELECT * from "Zeho"'
+		dts = raw_sql('some_raw_data', sql, :on_error )
+		# to model
+		dts = dts.map {|r| { 'Id' => r['Id'], 'Text' => r['Text'] } }
+		dts
+	end
   
+
+	def on_error e
+		set_deb(e.to_s)
+	end
   
   private
   
-    def self.raw (sql)
-      set_connection
-      results = @conn.execute(sql)
-      drop_connection
-      results
-    end
+	# raw sql request
+	def raw_sql (connString, sql, onErrorFn)
+		# all postgresql queries will be normalized to lower case, so to quote Table and Column names
+		# http://stackoverflow.com/questions/10628917/rails-reports-cant-find-a-column-that-is-there
+		# like 'SELECT * from "Zeho"' not 'SELECT * from Zeho'
+		dts = []
+		con = nil
+		begin
+			conn = set_connection connString
+			res  = exec_connection(conn, sql)
+			dts = res#.values # PG response (http://www.rubydoc.info/gems/pg/PG/Result#values-instance_method)
+		rescue Exception => e
+			# Handle error
+			if (!onErrorFn.nil?) then send(onErrorFn, e) end
+		ensure
+			close_connection conn
+		end
+		dts
+	end
   
-    def self.set_connection
-      #@conn = ActiveRecord::Base.establish_connection("some_raw_data")
-      #cui = Class::new(ActiveRecord::Base)
-      #@conn = cui.establish_connection("some_raw_data").connection
-      
-      @conn = self.connection
-      
-      @conn
-    end
-    
-    
-    def self.drop_connection
-      #ActiveRecord::Base.establish_connection(Rails.env) # reset connection
-    end
+	# set connection
+	def set_connection (connectionName)
+		connHash = ActiveRecord::Base.configurations[connectionName]
+		conn = PG::Connection.new(
+			connHash['host'], 
+			connHash['port'], 
+			nil, 
+			nil, 
+			connHash['database'], 
+			connHash['username'], 
+			connHash['password']);
+		conn
+	end
+
+	#close connection
+	def close_connection (conn)
+		conn.finish unless conn == nil || conn.finished?
+	end
+
+	# sql
+	def exec_connection (conn, sql)
+		res = conn.exec(sql)
+		res
+	end
+
+
+   
   
 end
 

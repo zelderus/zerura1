@@ -24,6 +24,12 @@
 </div>
 
 
+<% if (@zeh != nil && !@zeh.get_deb.nil? && !@zeh.get_deb().empty?) %>
+<div style='color:#B30000; margin: 0 10px; padding: 10px; border: 1px solid #B30000; background-color: #FFE5E5;font-weight: bold;'>
+	<%= @zeh.get_deb %>
+</div>
+<% end %>
+
 
 
 
