@@ -44,8 +44,6 @@ class WelcomeController < ApplicationController
 	@records = [];
     
     # db 2
-    #zeho = Zeho.new
-    #@records2 = zeho.get_all
 	@zeh = Zeho.new
     @records2 = @zeh.get_all
     
