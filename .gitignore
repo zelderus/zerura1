@@ -18,6 +18,7 @@
 # Игнорирование прочих ненужных файлов.
 database.yml
 doc/
+public/assets/
 *.swp
 *~
 .project
