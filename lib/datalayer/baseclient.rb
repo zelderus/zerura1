@@ -1,5 +1,15 @@
 module DataLayer
 
+	#####################################################
+	#													#
+	#	Базовый класс, для прямых запросов в базу PG	#
+	#		- 	как правило его наследуют				#
+	#			для разделения бизнес логики			#
+	#			со своими моделями						#
+	#		- 	основной метод: raw_sql					#
+	#		-	метод test() как пример реализации		#
+	#													#
+	#####################################################
 	class BaseClient
 
 		# текущая ошибка
@@ -41,9 +51,15 @@ module DataLayer
 	  
 
 		#
-		def test(onError=nil)
+		#	test
+		#		пример метода из наследуемого класса,
+		#		получение данных, обработка ошибки, привод к своей модели
+		#
+		def test()
+			connstr = "some_raw_data"	# название раздела из конфига database.yml
 			sql = 'SELECT TOP 10 * from "Zeho"'
-			dts = raw_sql('some_raw_data', sql, onError)
+			dts = raw_sql(connstr, sql, method(:on_error))
+			# to model
 			dts = dts.map {|r| { 'Id' => r['Id'], 'Text' => r['Text'] } }
 			dts
 		end
