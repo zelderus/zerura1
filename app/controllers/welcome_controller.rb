@@ -37,6 +37,10 @@ class WelcomeController < ApplicationController
   
   
   def ss
+	# используемые скрипты на этой странице
+	add_js("widgets/zerura")
+
+
     # db 1
     #sql = "Select * from testo"
     ##conn = ActiveRecord::Base.establish_connection(Rails.env)

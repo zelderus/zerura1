@@ -62,9 +62,9 @@ Blog2::Application.configure do
   # Precompile additional assets.
   # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
   # config.assets.precompile += %w( search.js )
-	config.assets.precompile += %w( lib/zerura.js )
 	config.assets.precompile += %w( zelder.js )
 	config.assets.precompile += %w( modules/modules.js )
+	config.assets.precompile += %w( widgets/*.js )
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
