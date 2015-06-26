@@ -3,12 +3,20 @@
 <head>
   <title><%= full_title(yield(:title)) %></title>
   <%= stylesheet_link_tag    	"application", media: "all", "data-turbolinks-track" => true %>
-  <%= stylesheet_link_tag 		params[:controller] %>
   <%= javascript_include_tag 	"application", "data-turbolinks-track" => true %>
   <%= javascript_include_tag 	"zelder" %>
-  <%= javascript_include_tag 	params[:controller] %>
-
+  <%= javascript_include_tag 	"modules/modules" %>
   <%= csrf_meta_tags %>
+
+
+	<script type="text/javascript">
+    $(function () {
+        zedk.DebugEnable();	// debug msg enable
+		zedk.About();
+
+    })
+	</script>
+
 </head>
 <body>
 

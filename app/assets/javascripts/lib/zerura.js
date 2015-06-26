@@ -7,17 +7,25 @@ this.zerura = this.zerura || {};
 
 $(function () {
 
-    zerura.Testo("testo 111");
-		
-	console.log(zelder.library.about.version);
 });
 
 
 
-
-
-zerura.Testo = function(msg) {
- 	console.log("%c" + msg, 'background: #F22; color: #FFFF66; padding: 0 4px;');
+zerura.Init = function(opts) {
+ 	
+	// TODO: get DIV objects and etc
+	
 };
 
+
+
+
+
+// Start map
+zerura.MapGo = function(msg) {
+ 	zedk.ConsoleGreen("Map goooo...");
+
+	var map = zedk.map.CreateMap();
+
+};
 
