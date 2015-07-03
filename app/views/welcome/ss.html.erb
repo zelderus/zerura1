@@ -4,21 +4,14 @@
 
 <script type="text/javascript">
     $(function () {
-		// init
+		// init and start map
 		zerura.Init({
+			gkey: "",
+			gdebug: true,
+			protocol: "http",
+			glibraries: "places",
 			inited: true
 		});
-		// init map and go
-		opts = 
-			{
-				gkey: "",
-				gdebug: false,
-				protocol: "http",
-				glibraries: "places"
-			};
-		zedk.map.Init(opts, "zerura.MapGo");
-
-
     });
 </script>
 
