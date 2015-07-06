@@ -3,13 +3,13 @@
 Базовый пример. Каркас сайта.
 
 
-==Основноые моменты:
+==Основные моменты:
 * подключены jquery и zelder.library и прочие
 * простое добавление скриптов и стилей (widget) и их подключение
 * прямые запросы в базу
 
 ==Работа с базой (PG)
-1. Необходимо в конфиге <tt>config/database.yml</tt> прописать подключение к базе, пример:
+- Необходимо в конфиге <tt>config/database.yml</tt> прописать подключение к базе, пример:
  some_raw_data:
   adapter: postgresql
   encoding: utf8
@@ -18,8 +18,8 @@
   username: postgres
   password: pass
   host: 127.0.0.1
-2. В коде создать <tt>клиент</tt> наследующий <tt>lib/datalayour/baseclient.rb</tt>, пример класс в <tt>lib/clients/zeho_client.rb</tt>. 
-В клиенте выполнить инициализацию конфига.
+- В коде создать <tt>клиент</tt> наследующий <tt>lib/datalayour/baseclient.rb</tt>, пример класс в <tt>lib/clients/zeho_client.rb</tt>. 
+- В клиенте выполнить инициализацию конфига.
 
 ==Работа со скриптами и контентом
 Проект уже подключает jquery и прочие библиотеки. Дополнительные кладуться в папку <tt>assets/javascript/widgets</tt> и подключаются в контроллере методом <tt>add_js("widgets/zerura")</tt>.
