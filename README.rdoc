@@ -19,10 +19,11 @@
   password: pass
   host: 127.0.0.1
 - В коде создать <tt>клиент</tt> наследующий <tt>lib/datalayour/baseclient.rb</tt>, пример класс в <tt>lib/clients/zeho_client.rb</tt>. 
-- В клиенте выполнить инициализацию конфига.
+- В клиенте выполнить инициализацию конфига:
+ init('some_raw_data')
 
 ==Работа со скриптами и контентом
-Проект уже подключает jquery и прочие библиотеки. Дополнительные кладуться в папку <tt>assets/javascript/widgets</tt> и подключаются в контроллере методом <tt>add_js("widgets/zerura")</tt>.
+Проект уже подключает jquery и прочие библиотеки. Дополнительные кладутся в папку <tt>assets/javascript/widgets</tt> и подключаются в контроллере методом <tt>add_js("widgets/zerura")</tt>.
 Пример скрипта, с использованием библиотек <tt>widgets/zerura.js</tt>
 
 
