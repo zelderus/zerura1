@@ -21,15 +21,23 @@ module DataLayer
 			@deb = txt
 		end
 
+		
+		#
+		# Инициализация клиента
+		# 	connString	- название раздела из database.yml с настройками подключения к базе
+		# 
+		def init (connString)
+			@connData = init_connection connString
+
+		end
 
 		#
 		# Прямой запрос в базу
 		#
-		#	connString	- название раздела из database.yml с настройками подключения к базе
 		#	sql			- sql запрос (названия полей и таблиц обернуты в кавычки)
 		#	onError		- ссылка на метод принимающий Exception (пример, method(:on_error))
 		#
-		def raw_sql (connString, sql, onError=nil)
+		def raw_sql (sql, onError=nil)
 			# all postgresql queries will be normalized to lower case, so to quote Table and Column names
 			# http://stackoverflow.com/questions/10628917/rails-reports-cant-find-a-column-that-is-there
 			# like 'SELECT * from "Zeho"' not 'SELECT * from Zeho'
@@ -37,7 +45,7 @@ module DataLayer
 			con = nil
 			set_errorno ""
 			begin
-				conn = set_connection connString
+				conn = set_connection @connData
 				res  = exec_connection(conn, sql)
 				dts = res#.values # PG response (http://www.rubydoc.info/gems/pg/PG/Result#values-instance_method)
 			rescue Exception => e
@@ -67,17 +75,27 @@ module DataLayer
 
 
 	  private
-		# set connection
-		def set_connection (connectionName)
+		# init connection
+		def init_connection (connectionName)
 			connHash = ActiveRecord::Base.configurations[connectionName]
+			connData = Hash.new
+			connData['host'] 		= connHash['host']
+			connData['port'] 		= connHash['port']
+			connData['database'] 	= connHash['database']
+			connData['username'] 	= connHash['username']
+			connData['password'] 	= connHash['password']
+			connData
+		end
+		# set connection
+		def set_connection (connectionData)
 			conn = PG::Connection.new(
-				connHash['host'], 
-				connHash['port'], 
+				connectionData['host'], 
+				connectionData['port'], 
 				nil, 
 				nil, 
-				connHash['database'], 
-				connHash['username'], 
-				connHash['password']);
+				connectionData['database'], 
+				connectionData['username'], 
+				connectionData['password']);
 			conn
 		end
 		#close connection

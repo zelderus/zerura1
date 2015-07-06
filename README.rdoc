@@ -1,9 +1,29 @@
 == ZeRuRa
 
-zldr rora
+Базовый пример. Каркас сайта.
 
 
-* zerora <tt>first</tt>
+=Основноые моменты:
+* подключены jquery и zelder.library и прочие
+* простое добавление скриптов и стилей (widget) и их подключение
+* прямые запросы в базу
 
-* end
+=Работа с базой (PG)
+1. Необходимо в конфиге <tt>config/database.yml</tt> прописать подключение к базе, пример:
+ some_raw_data:
+  adapter: postgresql
+  encoding: utf8
+  database: zebase
+  port: 5433
+  username: postgres
+  password: pass
+  host: 127.0.0.1
+2. В коде создать <tt>клиент</tt> наследующий <tt>lib/datalayour/baseclient.rb</tt>, 
+пример класс в <tt>lib/clients/zeho_client.rb</tt>. В клиенте выполнить инициализацию конфига.
+
+=Работа со скриптами и контентом
+Проект уже подключает jquery и прочие библиотеки. Дополнительные кладуться в папку <tt>assets/javascript/widgets</tt> 
+и подключаются в контроллере методом <tt>add_js("widgets/zerura")</tt>. Пример скрипта, с использованием библиотек <tt>widgets/zerura.js</tt>
+
+
 
