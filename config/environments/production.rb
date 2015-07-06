@@ -62,6 +62,11 @@ Blog2::Application.configure do
   # Precompile additional assets.
   # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
   # config.assets.precompile += %w( search.js )
+	config.assets.precompile += %w( jquery-last.css )
+	config.assets.precompile += %w( zelder.css )
+	config.assets.precompile += %w( widgets/*.css )
+
+	config.assets.precompile += %w( jquery-last.js )
 	config.assets.precompile += %w( zelder.js )
 	config.assets.precompile += %w( modules/modules.js )
 	config.assets.precompile += %w( widgets/*.js )

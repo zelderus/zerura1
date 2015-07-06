@@ -17,7 +17,26 @@ zerura.Init = function(opts) {
 
 	// start init map and go
 	zedk.map.Init(opts, "zerura.MapGo", "zerura.MapError");
+
+	//+ library test
+	//- window
+	var wnd = null;
+	var createWndTestFn = function(){
+		if (wnd) { wnd.Close(); wnd = null; }
+		var $content = $("<div>").css("padding", "10px").html("window content..");
+		wnd = new zelder.ui.Window("Test window", $content, 400, 300, null, []);
+	};
+	var btnWnd = new zelder.ui.Button("Test window", "Success", createWndTestFn);
+	btnWnd.SetStyle("width", "150px");
+	btnWnd.AppendTo($(".TestoBlock"));
+	//- btn
+	var btnOk = new zelder.ui.Button("Test alert", "Success", function(){ alert('test ok');});
+	btnOk.SetStyle("width", "150px");
+	btnOk.AppendTo($(".TestoBlock"));
+
+
 	
+
 };
 
 

@@ -1,0 +1,194 @@
+
+/************************************************
+*                                               *
+*                   Buttons                     *
+*                                               *
+************************************************/
+div.AdminControl_Button { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 12px; line-height: 1; text-align: center; margin: 3px; padding: 6px 6px 0 6px; cursor: pointer; border: 1px solid white; box-shadow: #01345a 0 0 3px; color: white; text-decoration: none; -webkit-border-radius: 3px; -khtml-border-radius: 3px; border-radius: 3px; -moz-border-radius: 3px; min-width: 100px; height: 20px; width: 150px; }
+div.AdminControl_Button.Normal {background-color: #01345A; box-shadow: #025697 0 0 3px;}
+div.AdminControl_Button.Normal:HOVER { background-color: #025697; }
+div.AdminControl_Button.Success {background-color: #015B28; box-shadow: #029743 0 0 3px;}
+div.AdminControl_Button.Success:HOVER {background-color: #029743;}
+div.AdminControl_Button.Alert {background-color: #97020C; box-shadow: #97020C 0 0 3px;}
+div.AdminControl_Button.Alert:HOVER {background-color: #D30311;}
+
+div.AdminControl_Button.disabled {background-color: #ABABAB; box-shadow: #025697 0 0 3px; cursor:auto;}
+div.AdminControl_Button.disabled:HOVER {box-shadow: #025697 0 0 3px; background-color: #ABABAB;}
+
+/************************************************
+*                                               *
+*                   Windows                     *
+*                                               *
+************************************************/
+div.AdminControl_Window_Modal {position: absolute; background-color:#ccc; opacity:0.4;}
+div.AdminControl_Window {z-index: 1006; position: absolute; width: 300px; overflow: hidden; border: 1px solid #A6C9E2; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 12px; line-height: 1; color: #222; background-color: #2769a3; box-shadow:#2769a3 0 0 8px; /*background-image: url(/content/zwos/images/windows-bg.png);*/ -webkit-border-radius: 5px; -khtml-border-radius: 5px; border-radius: 5px; background-color: rgba(39, 105, 163, 0.9);}
+div.AdminControl_Window h2 {color:#295f95;}
+div.AdminControl_Window div.Window_Title {cursor: move; height:20px; overflow:hidden; padding: 0 6px 3px 6px; position: relative; -webkit-border-radius: 5px; -khtml-border-radius: 5px; border-radius: 5px;}
+div.AdminControl_Window div.Window_Title span.Window_Title_Title {float: left; margin: 5px 0 0 0; color: #fff; font-family: Segoe UI,Tahoma,Arial,Verdana,sans-serif; font-size: 12px; line-height: 1; font-weight: normal; text-shadow: white -3px 0px 10px, white 3px 0px 10px;  -webkit-text-shadow: white -3px 0px 10px, white 3px 0px 10px; -moz-text-shadow: white -3px 0px 10px, white 3px 0px 10px;}
+div.AdminControl_Window div.Window_Title a.Window_Title_Close {position: absolute; top: -1px; right: 6px; width: 48px; height: 20px; color: white; text-decoration: none; -webkit-border-bottom-right-radius: 5px; -khtml-border-bottom-right-radius: 5px; border-bottom-right-radius: 5px; background-image: url(/images/ui-icons.png); background-position: 0 0; }
+div.AdminControl_Window div.Window_Title a.Window_Title_Close:HOVER { box-shadow:Red 0 -2px 8px; background-position: -48px 0;}
+div.AdminControl_Window div.Window_ContentWrapper {position: relative; border: 0; padding: 6px 6px; margin: 2px 0 0 0; overflow: auto; zoom: 1; box-shadow: none;color: #222;font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 12px; line-height: 1;} 
+div.AdminControl_Window div.Window_ContentWrapper div.Window_Content {min-height: 0px; height: 500px; position: relative; border: 1px solid #666; background-color: white; overflow: auto; box-shadow: #fff 0 0 2px;}
+div.AdminControl_Window div.Window_ContentWrapper div.Window_Controls { margin:0; padding:8px; border: 1px solid #cccccc; border-top:none; background-color: #f0f0f0; height:40px; width:100%; overflow:hidden; -webkit-border-bottom-left-radius: 5px; -khtml-border-bottom-left-radius: 5px; border-bottom-left-radius: 5px; -webkit-border-bottom-right-radius: 5px; -khtml-border-bottom-right-radius: 5px; border-bottom-right-radius: 5px;}
+div.AdminControl_Window div.Window_ContentWrapper div.Window_Controls div.AdminControl_Button { float:left; width:150px;}
+
+/************************************************
+*                                               *
+*               LoadingDialog                   *
+*                                               *
+************************************************/
+.Control_LoadingDialog_Modal {position: absolute; background-color:#ccc; opacity:0.4;}
+.Control_LoadingDialog {z-index: 1006; position: absolute; width: 300px; overflow: hidden; border: 1px solid #A6C9E2; line-height: 1; color: #222; background-color: #fff; box-shadow:#333 0 0 8px; /*background-image: url(/content/zwos/images/windows-bg.png);*/ -webkit-border-radius: 5px; -khtml-border-radius: 5px; border-radius: 5px; font: 16px/20px Tahoma;}
+.Control_LoadingDialog h2 {color:#333; font-weight: 700;}
+.Control_LoadingDialog .Window_Title {padding: 10px; margin:5px 0; color:#000; text-align:center; font-weight: bold; font-size: 28px; line-height: 32px; font-family: Georgia;}
+.Control_LoadingDialog .Window_Content { position: relative; padding:10px; color:#333; border: none; background-color: #fff; overflow: auto;}
+
+
+/************************************************
+*                                               *
+*                   Tabs                        *
+*                                               *
+************************************************/
+.AdminControl_Tabs { margin:30px 0 0 0; padding:8px !important; border-top:1px solid #aaa; border-bottom:1px solid #666; box-shadow:#aaa 0 3px 1px; -webkit-border-radius: 5px; -khtml-border-radius: 5px; border-radius: 5px;}
+.AdminControl_Tabs .AdminControl_Tabs_Controls { overflow:hidden; height:30px; position: relative; top: -32px;}
+.AdminControl_Tabs .AdminControl_Tabs_Tab {display:block; float:left; height: 20px; width:100px; cursor:pointer; margin:0 4px; padding: 6px 4px 0 4px; text-align:center; -webkit-border-radius: 3px; -khtml-border-radius: 3px; border-radius: 3px; background-color:#ccc; border:1px solid #666; color:#222; font-weight:bold; text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);}
+.AdminControl_Tabs .AdminControl_Tabs_Tab:HOVER { background-color:#999;}
+.AdminControl_Tabs .AdminControl_Tabs_Tab.Current { color:#fff; background-color:#666; cursor:default;}
+.AdminControl_Tabs .AdminControl_Tabs_TabContent { top: -20px; position: relative; overflow:hidden;}
+
+
+/************************************************
+*                                               *
+*                 LoadingSpin                   *
+*                                               *
+************************************************/
+.Control_LoadingSpin { width:355px; height:15px; overflow:hidden; background:#eee url('/images/progress-0.png') no-repeat; padding:0; }
+.Control_LoadingSpin .LoadingSpin_Spin { height:13px; width:100%; margin:1px; background:transparent url('/images/progress-bar.png') repeat-y; background-position:-348px 0; }
+
+
+/************************************************
+*                                               *
+*                 DropDownList                  *
+*                                               *
+************************************************/
+select.AdminControl_DDL { width:200px;}
+select.AdminControl_DDL option { display:block; padding:3px; border-bottom:1px dotted #ddd; background-color: #EEE;}
+select.AdminControl_DDL option.selected { color:#C34C28}
+select.AdminControl_DDL.Error { background-color:#FFF5F7; border:1px solid #B30024; color:#B30024;}
+
+select.AdminControl_DDL 
+{
+    font: normal 13px/100% Verdana,  Tahoma, sans-serif;
+    display: inline-block;
+    position:relative;
+    height: 28px;
+border: 1px solid #8F8F8F;
+border-top-color: #D6D6D6;
+border-left-color: #B1B1B1;
+border-right-color: #B1B1B1;
+-webkit-border-radius: 4px;
+border-radius: 4px;
+text-decoration: none;
+color: #676767;
+outline: none;
+vertical-align: middle;
+background: -moz-linear-gradient(top, white, #E6E6E6 20%, #F2F2F2 80%, #CCC);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, white), color-stop(20%, #E6E6E6), color-stop(80%, #F2F2F2), color-stop(100%, #CCC));
+background: -webkit-linear-gradient(top, white, #E6E6E6 20%, #F2F2F2 80%, #CCC);
+background: -o-linear-gradient(top, white, #E6E6E6 20%, #F2F2F2 80%, #CCC);
+background: -ms-linear-gradient(top, white, #E6E6E6 20%, #F2F2F2 80%, #CCC);
+background: linear-gradient(top, white, #E6E6E6 20%, #F2F2F2 80%, #CCC);
+-webkit-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.25);
+-mox-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.25);
+box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.25);
+cursor: pointer;
+
+}
+
+
+/************************************************
+*                                               *
+*                FloatingHint                   *
+*                                               *
+************************************************/
+.AdminControl_FloatingHint.DefaultStyle { position:absolute; padding:1px; border:1px solid #fff; box-shadow:#666 0 0 3px; background-color:#fff;}
+.AdminControl_FloatingHint.DefaultStyle .AdminControl_FloatingHint_Content { font: Arial bold 10px;}
+
+/************************************************
+*                                               *
+*                  CheckBox                     *
+*                                               *
+************************************************/
+.AdminControl_CheckBox { width: 100%; clear: both; overflow: hidden;}
+.AdminControl_CheckBox input { width:20px !important; float: left; cursor:pointer;}
+.AdminControl_CheckBox label { display: block; margin: 3px 0 0 0; float: left; cursor:pointer;}
+.AdminControl_CheckBox label:HOVER { color:#9E2800 !important; }
+.AdminControl_CheckBox.Selected label { color:#F53D00 !important; }
+.AdminControl_CheckBox.Hovered label { color:#9E2800 !important; }
+
+
+/************************************************
+*                                               *
+*              MediaFileWorker                  *
+*                                               *
+************************************************/
+.Control_MediaFileWorker5 {}
+
+.Control_MediaFileWorker {}
+.Control_MediaFileWorker .Control_MediaFileWorker_Input {}
+.Control_MediaFileWorker .Control_MediaFileWorker_Context {}
+
+
+/************************************************
+*                                               *
+*                 StatusPanel                   *
+*                                               *
+************************************************/
+.Control_StatusPanel { height:200px; overflow:auto; font-family:Tahoma; font-size:10px; color:#000; padding:8px; border:1px solid #777; box-shadow:#777 1px 1px 2px; -webkit-border-radius: 5px; -khtml-border-radius: 5px; border-radius: 5px;}
+.Control_StatusPanel .StatusPanel_Status { color:#666; margin:1px; padding:2px;}
+.Control_StatusPanel .StatusPanel_Status.Success { color:Green;}
+.Control_StatusPanel .StatusPanel_Status.Error { color:Red;}
+
+
+/************************************************
+*                                               *
+*                 WizardsPanel                  *
+*                                               *
+************************************************/
+.Control_WizardPanel { position:relative; overflow:hidden; height:585px; width:855px;}
+
+.Control_WizardPanel .SlideButton { width:40px; cursor:pointer; overflow:hidden; background-color:#DAE5ED; color:#fff; float:left; min-height: 100%; 	/*height: auto !important; height: 100%;*/}
+.Control_WizardPanel .SlideButton:HOVER {background-color:#B4D4ED;}
+.Control_WizardPanel .SlideButton.Disabled { cursor:default; background-color:#FAFAFA;}
+.Control_WizardPanel .SlideButton.Disabled:HOVER {background-color:#FAFAFA;}
+.Control_WizardPanel .PrevButton {}
+.Control_WizardPanel .NextButton {}
+.Control_WizardPanel .WizardMainContentWrapper { width:770px; overflow:hidden; background-color:#fafafa;float:left; height:100%;}
+
+.Control_WizardPanel .WizardMainContentWrapper .TabPanel { height:40px; overflow:hidden; color:#fefefe; border-bottom:1px solid #fdfdfd;}
+.Control_WizardPanel .WizardMainContentWrapper .TabPanel .TabPanel_Tab { float:left; width:100px; background-color:#008AB8;  margin: 3px 0; position:relative; color: #fefefe;font-family: 'Segoe UI',Verdana,Arial;font-size: 1em;font-weight: bold;padding: 10px;text-decoration: none;border: 1px solid #333; text-align:center;}
+.Control_WizardPanel .WizardMainContentWrapper .TabPanel .TabPanel_Tab.Current {background-color:#3366FF;}
+
+.Control_WizardPanel .WizardMainContentWrapper .TabContentWrapper { overflow:auto; height:505px; width:2020px}
+
+.Control_WizardPanel .WizardMainContentWrapper .TabContentWrapper .TabContent { float:left; height:495px; width: 730px;overflow: hidden; overflow-y:auto; padding:0 20px 10px 20px;}
+.Control_WizardPanel .WizardMainContentWrapper .TabContentWrapper .TabContent .TabTitle { }
+.Control_WizardPanel .WizardMainContentWrapper .TabContentWrapper .TabContent .TabTitle h2 { float:left; padding-top: 30px; padding-bottom: 0; font-size: 24px;}
+.Control_WizardPanel .WizardMainContentWrapper .TabContentWrapper .TabContent .TabTitle span.ErrorPlace {display:none; float:left; font-size: 24px; color:Red;  margin:30px 0 2px 10px;}
+.Control_WizardPanel .WizardMainContentWrapper .TabContentWrapper .TabContent .TabTitle .TabTitleDescription {color: #2A2A2A;margin-top: 0;margin-bottom: 0;padding-bottom: 15px;line-height: 18px;font-size: 12px;font-family: 'Segoe UI','Lucida Grande',Verdana,Arial,Helvetica,sans-serif;}
+.Control_WizardPanel .WizardMainContentWrapper .TabContentWrapper .TabContent .TabElement {}
+
+.Control_WizardPanel .WizardMainContentWrapper .TabControls {height:40px; overflow:hidden; border-top:1px solid #fff;}
+.Control_WizardPanel .WizardMainContentWrapper .TabControls .TabControlButton { float:right; overflow:hidden; margin:0 20px 0 0; height:15px; width:120px; text-align:center; cursor:pointer; color: #707070;font-family: 'Segoe UI',Verdana,Arial;font-size: 14px;font-weight: bold;padding: 10px;text-decoration: none;border: 1px solid #888;}
+.Control_WizardPanel .WizardMainContentWrapper .TabControls .TabControlButton:HOVER { background-color: #339AC1; color:#fff; border:1px solid #339AC1;}
+
+
+/************************************************
+*                                               *
+*                 ImageViewer                   *
+*                                               *
+************************************************/
+.Control_ImageViewer { width:1024px; height:768px; background-color:#444; display:none; z-index: 1006; position: absolute; overflow: hidden; border: 1px solid #A6C9E2; box-shadow:#A6C9E2 0 0 3px; text-align:center; /*padding:10px;рамка*/}
+.Control_ImageViewer .Control_ImageViewer_Image {}
+
+
