@@ -38,8 +38,7 @@ class WelcomeController < ApplicationController
   
   def ss
 	# используемые скрипты на этой странице
-	add_js("widgets/zerura")
-
+	add_js("zerura")
 
     # db 1
     #sql = "Select * from testo"

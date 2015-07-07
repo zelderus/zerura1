@@ -27,8 +27,12 @@
 
 ==Работа со скриптами и контентом
 Проект уже подключает jquery и прочие библиотеки. Дополнительные кладутся в папку <tt>assets/javascript/widgets</tt> и подключаются в контроллере методом
- add_js("widgets/zerura")
-Пример скрипта, с использованием библиотек <tt>widgets/zerura.js</tt>
-
-
+ add_js("zerura") //- путь без указания 'widgets/'
+Пример скрипта, с использованием библиотек <tt>widgets/zerura.js</tt>.
+Дополнительные скрипты, общие на весь сайт, кладутся в папку <tt>assets/javascript/modules/src</tt> - они будут автоматически подключены на всех страницах сайта.
+Внешние модули скрипты и прочие, как правило кладутся в <tt>lib/assets/javascript</tt> и прописываются для прекомпилятора в файле настройках <tt>config/environments/production.rb</tt>.
+Для подключения на всех страницах, прописать на мастер странице сайта <tt>views/layouts/application.html.erb</tt>:
+ <%= javascript_include_tag 	"testlib" %>  
+Для подключения в конкретном действии:
+ add_js("testlib", true)
 
