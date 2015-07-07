@@ -46,7 +46,7 @@ class WelcomeController < ApplicationController
     #@records = ActiveRecord::Base.connection.execute(sql)
 	@records = [];
     
-    # db 2
+    # db 2 - приминение клиента с прямыми запросами в PG
 	@zeh = Zeho.new
     @records2 = @zeh.get_all
     

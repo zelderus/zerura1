@@ -8,7 +8,7 @@ class Zeho
 
 	end
 
-	# отладочной информации
+	# отладочная информация
 	def get_deb
 		#@client.get_errorno		
 		@deb
@@ -16,14 +16,15 @@ class Zeho
 
 
 	def get_all
-		@client.get_all(method(:on_error))
+		@client.get_all(method(:on_error))	# передача метода, как аргумент
 	end
   
 
 
   
   private
-  
+
+  	# метод при ошибке запросов
 	def on_error e
 		@deb = e.to_s
 	end
