@@ -1,3 +1,5 @@
+require "datalayer/request"
+
 module DataLayer
 
 	#####################################################
@@ -32,7 +34,7 @@ module DataLayer
 		end
 
 		#
-		# Прямой запрос в базу
+		# Прямой запрос в базу (с открытием и закрытием соединения)
 		#
 		#	sql			- sql запрос (названия полей и таблиц обернуты в кавычки)
 		#	onError		- ссылка на метод принимающий Exception (пример, method(:on_error))
@@ -46,7 +48,7 @@ module DataLayer
 			set_errorno ""
 			begin
 				conn = set_connection @connData
-				res  = exec_connection(conn, sql)
+				res  = exec(conn, sql)
 				dts = res#.values # PG response (http://www.rubydoc.info/gems/pg/PG/Result#values-instance_method)
 			rescue Exception => e
 				if (!onError.nil?) then onError.call(e) end
@@ -56,6 +58,33 @@ module DataLayer
 			end
 			dts
 		end
+
+
+		#
+		#	get - создает соединение к базе
+		#	
+		def get
+			set_connection @connData
+		end
+		#
+		#	close - закрывает соединение к базе
+		#	
+		def close conn
+			close_connection conn
+		end
+		#
+		#	exec - выполнение запроса к базе
+		#		необходимо обернуть в begin,rescue,ensure (открытие соединения, запрос, закрытие соединения)
+		#	
+		def exec (conn, sql)
+			request = "";
+			if (sql.is_a? DataLayer::Request) then request = sql.to_request else request = sql end
+			res  = exec_connection(conn, request)
+			return res
+		end
+
+
+
 	  
 
 		#
@@ -79,6 +108,8 @@ module DataLayer
 		def init_connection (connectionName)
 			connHash = ActiveRecord::Base.configurations[connectionName]
 			connData = Hash.new
+			if (connHash.nil?) then raise "Error connection string '#{connectionName}'"; return connData; end
+			
 			connData['host'] 		= connHash['host']
 			connData['port'] 		= connHash['port']
 			connData['database'] 	= connHash['database']

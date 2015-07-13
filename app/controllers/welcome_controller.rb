@@ -48,6 +48,9 @@ class WelcomeController < ApplicationController
     
     # db 2 - приминение клиента с прямыми запросами в PG
 	@zeh = Zeho.new
+
+	#@zeh.insert(28, "CRAB @num CHECK!!!");
+
     @records2 = @zeh.get_all
     
 

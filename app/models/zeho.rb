@@ -19,6 +19,9 @@ class Zeho
 		@client.get_all(method(:on_error))	# передача метода, как аргумент
 	end
   
+	def insert(num, text)
+		@client.insert(num, text, method(:on_error))
+	end
 
 
   

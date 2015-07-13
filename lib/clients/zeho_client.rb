@@ -18,6 +18,19 @@ module Clients
 		end
 
 
+		def insert(num, text, onError=nil)
+			sql = 'INSERT INTO "Zeho"("Id", "Text") VALUES (@num, @text);'
+			req = DataLayer::Request.new	# безопасная передача параметров
+			req.set sql
+			req.set_str("text", text)			
+			req.set_int("num", num)
+
+			dts = raw_sql(req, onError)
+			dts = dts.map {|r| { 'Id' => r['Id'], 'Text' => r['Text'] } }
+			dts
+		end
+
+
 	end
 
 
