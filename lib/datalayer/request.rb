@@ -35,7 +35,7 @@ module DataLayer
 		#	set_int - передача числа в параметр
 		#
 		def set_int (key, num)
-			if (!is_number? num) then raise "#{num} is not a Number"; return; end
+			if (!is_number? num) then raise "'#{num}' is not a Number"; return; end
 			place_param(key, num);
 		end
 		#	
@@ -55,10 +55,10 @@ module DataLayer
 		#
 		def to_request
 			if (@builded) then return @templ end
-			@builded = true;
 			@prs.each do |key, value|
 				@templ.gsub! key, value
 			end
+			@builded = true;
 			return @templ
 		end
 

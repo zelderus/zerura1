@@ -30,14 +30,28 @@ zerura.Init = function(opts) {
 	btnWnd.SetStyle("width", "150px");
 	btnWnd.AppendTo($(".TestoBlock"));
 	//- btn
-	var btnOk = new zelder.ui.Button("Test alert", "Success", function(){ alert('test ok');});
+	var btnOk = new zelder.ui.Button("Test alert", "Success", zerura.SendTest);
 	btnOk.SetStyle("width", "150px");
 	btnOk.AppendTo($(".TestoBlock"));
-
-
 	
 
 };
+
+
+/*
+*	Запрос на сервер Json, с использованием Api скриптов	
+*/
+zerura.SendTest = function() {
+	// api request
+	zedk.api.SendAjax(
+		"testjson", 
+		"GET", 
+		{}, 
+		function(m) { alert("succ: " + m.name); }, 
+		function(e) { alert("err: " + e); 
+	});
+};
+
 
 
 
