@@ -36,11 +36,23 @@ zedk.api.SendAjax = function(method, /*GET|POST*/type, dataSend, onSuccess, onEr
 			else if (onError) onError(jo.Message); 
 		},
 	  	error: function(x,m,e){ 
-	  		zedk.ConsoleRed("SendAjax error: " + m);
+	  		zedk.ConsoleRed("SendAjax error: " + e);
 			if (onError) onError(m);
 	  	}
 	});
 
+};
+/*
+*	Send - Ajax GET
+*/
+zedk.api.Send = function(method, dataSend, onSuccess, onError) {
+	zedk.api.SendAjax(method, "GET", dataSend, onSuccess, onError);
+};
+/*
+*	Post - Ajax POST
+*/
+zedk.api.Post = function(method, dataSend, onSuccess, onError) {
+	zedk.api.SendAjax(method, "POST", dataSend, onSuccess, onError);
 };
 
 

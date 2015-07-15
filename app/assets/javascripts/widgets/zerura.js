@@ -43,9 +43,8 @@ zerura.Init = function(opts) {
 */
 zerura.SendTest = function() {
 	// api request
-	zedk.api.SendAjax(
+	zedk.api.Send(
 		"testjson", 
-		"GET", 
 		{}, 
 		function(m) { alert("succ: " + m.name); }, 
 		function(e) { alert("err: " + e); 
