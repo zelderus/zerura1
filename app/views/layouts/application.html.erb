@@ -1,28 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title><%= full_title(yield(:title)) %></title>
+  	<title><%= full_title() %></title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<%= get_headers %>
 
-  <%= stylesheet_link_tag 		"jquery-last" %>
-  <%= stylesheet_link_tag 		"zelder" %>
-  <%= stylesheet_link_tag    	"application", media: "all", "data-turbolinks-track" => false %>
-  <% get_csss do |c| %>
+	<%= stylesheet_link_tag 		"jquery-last" %>
+	<%= stylesheet_link_tag 		"zelder" %>
+	<%= stylesheet_link_tag    	"application", media: "all", "data-turbolinks-track" => false %>
+	<% get_csss do |c| %>
 		<%= stylesheet_link_tag(c) %>
-  <% end %>
-  <%= javascript_include_tag 	"jquery-last" %>
-  <%= javascript_include_tag 	"zelder" %>  
-  <%= javascript_include_tag 	"application", "data-turbolinks-track" => false %>
-  <%= javascript_include_tag 	"modules/modules" %>
-  <% get_jss do |j| %>
+	<% end %>
+	<%= javascript_include_tag 	"jquery-last" %>
+	<%= javascript_include_tag 	"zelder" %>  
+	<%= javascript_include_tag 	"application", "data-turbolinks-track" => false %>
+	<%= javascript_include_tag 	"modules/modules" %>
+	<% get_jss do |j| %>
 		<%= javascript_include_tag(j) %>
-  <% end %>
-  <%= csrf_meta_tags %>
+	<% end %>
+	<%= csrf_meta_tags %>
 
 
 
 	<script type="text/javascript">
     $(function () {
-        zedk.DebugEnable();
+        <% if (Rails.env.development? || params['_jsdebug'] == '1' || params['_jsd'] == '1') %>
+			zedk.DebugEnable();
+		<% end %>
 		//zedk.About();
     });
 	</script>
@@ -32,7 +36,7 @@
 
 	<div class="header">
 		<div class="straight">
-			<div class="header_title">zldr rails</div>
+			<div class="header_title"><a class="logo_link" href="/" tabindex="-1">zerura</a></div>
 		</div>
 	</div>
 	

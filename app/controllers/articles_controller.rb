@@ -6,12 +6,19 @@ class ArticlesController < ApplicationController
   
 
 	def index
+		set_title(t('articles_headers_title'))
+		set_headers(t('articles_headers_keyword'), t('articles_headers_desc'))
+
 		@articles = Article.all()
 	end
 	
 	
 	def show
 		@article = Article.find(params[:id])
+
+		set_title(@article.title)
+		set_headers(@article.title, @article.title)
+
 	end
 	
 	

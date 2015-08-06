@@ -4,7 +4,16 @@ class ApplicationController < ActionController::Base
 	# Prevent CSRF attacks by raising an exception.
 	# For APIs, you may want to use :null_session instead.
 	protect_from_forgery with: :exception
-
+	
+	# установка заголовка странице
+	def set_title(title)
+		@maintitle = title
+	end
+	# метатеги
+	def set_headers(keyword, desc)
+		@keyword = keyword
+		@desc = desc
+	end
 
 	# подключение стилей на страницу
 	def add_css(cssname, isExcplicitLink=false)
