@@ -30,7 +30,9 @@ table td { padding: 4px; }
 
 .content { padding: 10px; font-size: 14px; min-height: 600px; overflow: hidden; }
 
-
+.MainLink { margin: 5px 0 10px 0; font: 20px/28px Arial,Helvetica,sans-serif;}
+.MainLink a {color:#00779E !important;background: transparent;}
+.MainLink a:hover {color:#009DD1 !important;background: transparent;}
 
 .footer {padding: 20px; background-color: #3a5795; font-size: 12px; text-align:left; border-top:1px solid #666; color: #ddd; }
 .footer a { color: #bbb !important; background-color: transparent; }
