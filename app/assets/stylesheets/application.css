@@ -38,3 +38,15 @@ table td { padding: 4px; }
 .footer a { color: #bbb !important; background-color: transparent; }
 .footer a:hover { color: #fff !important; background-color: transparent; }
 
+/*
+ *	Debug 
+ */
+.debug-block {}
+.debug-block .debug-line { margin: 2px; border-bottom: 1px dotted #aaa; padding: 4px;}
+.debug-block .debug-line p { margin: 0; padding: 0;}
+.debug-block .debug-line .d-line-title { font-weight: bold;}
+.debug-block .debug-line.d-line-1 { margin: 0px 0 10px 0; background-color: #EEE;}
+.debug-block .debug-line.d-line-2 { margin: 0px 0 10px 15px; background-color: #DDD;}
+.debug-block .debug-line.d-line-3 { margin: 0px 0 10px 30px; background-color: #CCC;}
+.debug-block .debug-line.d-line-4 { margin: 0px 0 10px 45px; background-color: #BBB;}
+.debug-block .debug-line.d-line-5 { margin: 0px 0 10px 60px; background-color: #AAA;}

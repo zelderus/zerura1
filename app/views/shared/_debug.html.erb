@@ -1,0 +1,8 @@
+
+
+<% if (Rails.env.development? && (!@debug_text.nil? || !@debug_model.nil?)) %>
+	<div class='debug-block'>
+		<div><%= @debug_text %></div>
+		<div><%= @debug_model %></div>
+	</div>
+<% end %>

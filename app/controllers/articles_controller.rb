@@ -9,6 +9,13 @@ class ArticlesController < ApplicationController
 		set_title(t('articles_headers_title'))
 		set_headers(t('articles_headers_keyword'), t('articles_headers_desc'))
 
+		# just for test
+		to_d({ 
+			val: 'this is just value of the object',
+			val2: 'another one',
+			obj1: { obj_p1: 'inner val'}
+			})
+
 		@articles = Article.all()
 	end
 	
